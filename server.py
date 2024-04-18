@@ -1,5 +1,6 @@
 import socket
 import pickle
+import random
 
 HOST = '127.0.0.1'
 PORT = 8080
@@ -12,7 +13,7 @@ conn, addr = sock.accept()
 msg = pickle.loads(conn.recv(1024))
 p, g, A = msg
 
-b = 15
+b = random.randint(2, p-1)
 B = (g ** b) % p
 conn.send(pickle.dumps(B))
 
