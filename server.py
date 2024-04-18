@@ -13,7 +13,7 @@ conn, addr = sock.accept()
 msg = pickle.loads(conn.recv(1024))
 p, g, A = msg
 
-b = random.randint(2, p-1)
+b = random.randint(2, 10)
 B = (g ** b) % p
 conn.send(pickle.dumps(B))
 

@@ -8,8 +8,8 @@ PORT = 8080
 sock = socket.socket()
 sock.connect((HOST, PORT))
 
-p, g = random.randint(2, 100), random.randint(2, 10)
-a = random.randint(2, p-1)
+p, g = random.randint(2, 73), random.randint(2, 73)
+a = random.randint(2, 10)
 A = (g ** a) % p
 sock.send(pickle.dumps((p, g, A)))
 
